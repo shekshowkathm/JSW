@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//Angular Material Components
+import { HomeRoutingModule } from './home-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -35,20 +34,27 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
-import { ChartModule } from "angular-highcharts";
-import * as highcharts from 'highcharts';
+import { ChartModule } from 'angular-highcharts';
+import { RateofemissionsComponent } from './rateofemissions/rateofemissions.component';
+import { LossofconsumptionComponent } from './lossofconsumption/lossofconsumption.component';
+import { RateofeffusionComponent } from './rateofeffusion/rateofeffusion.component';
+import { RateofdiffusionComponent } from './rateofdiffusion/rateofdiffusion.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    HeaderComponent,
+    HomeComponent,
+    DashboardComponent,
+    RateofemissionsComponent,
+    LossofconsumptionComponent,
+    RateofeffusionComponent,
+    RateofdiffusionComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,FormsModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    HomeRoutingModule,ChartModule,
     MatInputModule,
-    MatAutocompleteModule,ChartModule,
+    MatAutocompleteModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatRadioModule,
@@ -75,8 +81,7 @@ import * as highcharts from 'highcharts';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+  ]
 })
-export class AppModule { }
+export class HomeModule { }
