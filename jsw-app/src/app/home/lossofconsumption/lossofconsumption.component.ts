@@ -74,8 +74,9 @@ export class LossofconsumptionComponent {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Decrese it now',
-        
+        cancelButtonText: 'Cancel X',
+        confirmButtonText: 'Take action',
+
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
