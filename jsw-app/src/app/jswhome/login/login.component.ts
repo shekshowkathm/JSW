@@ -28,8 +28,11 @@ export class LoginComponent {
   submitted=false;
   registrationForm!: FormGroup;
   loginForm!: FormGroup;
+
+  token!: string;
   constructor(private router: Router,private registerService:RegisterService,private formBuilder:FormBuilder){}
   ngOnInit(): void {
+    localStorage.clear()
 
     this.registerService.currentColor.subscribe((color:any)=>{
       this.currentColor = color
@@ -43,7 +46,7 @@ export class LoginComponent {
       password: new FormControl('', [Validators.required,Validators.minLength(8)])
     });
     this.loginForm=new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      userName: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required,Validators.minLength(8)])
     });
 
@@ -80,14 +83,21 @@ export class LoginComponent {
     console.log(this.registrationForm.value);
 
       this.registerService.submitForm(this.registrationForm.value).subscribe((data:any)=>{
+
         console.log('POST request successful', data);
+        console.log(data);
+
         Swal.fire(
           'Good job!',
-          'You clicked the button!',
+          'Your registration is success!',
           'success'
         )
         this.router.navigate(['/']);
-      },error => console.log('Error', error)
+      },error => Swal.fire(
+        '😑😐😐',
+        'Your Login is values are bad!',
+        'warning'
+      )
       )
     }
 
@@ -95,6 +105,25 @@ export class LoginComponent {
 
   loginSubmit(){
     console.log(this.loginForm.value);
+
+    this.registerService.submitLoginForm(this.loginForm.value).subscribe((data:any)=>{
+      console.log('POST request successful of login', data);
+      console.log(data);
+      this.token=data
+      console.log(this.token);
+      this.registerService.setAuthToken(this.token);
+      console.log(this.registerService.getAuthToken());
+
+
+
+      Swal.fire(
+        'Good job!',
+        'Your Login is success!',
+        'success'
+      )
+
+      this.router.navigate(['/home/dashboard']);
+    },error => console.log('Error', error))
 
   }
 }
