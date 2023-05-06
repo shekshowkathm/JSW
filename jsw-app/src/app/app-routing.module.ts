@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MonitorComponent } from './home/monitor/monitor.component';
 
 const routes: Routes = [
   {path:'home', loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},
   {path:'', loadChildren:()=>import('./jswhome/jswhome.module').then(m=>m.JswhomeModule)},
+
 
 ];
 
