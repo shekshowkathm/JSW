@@ -1,0 +1,130 @@
+.containers{
+  width: 100%;
+  height: 42vh;
+  background-color: #0F152B;
+  display: flex;
+  .map-area{
+   padding-top: 30px;
+    width: 25%;
+    height: 42vh;
+    // border: 2px solid red;
+    h2{
+      text-align: center;
+      color: azure;
+      font-size: 23px;
+    }
+    img{
+      border-radius: 30px;
+      margin-left: 90px;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .company{
+    padding: 30px;
+    width: 35%;
+    height: 42vh;
+    // border: 3px dotted #fff;
+    h2{
+      margin-left: 35px;
+      color: aqua;
+    }
+    ul{
+      list-style-type: none;
+      margin-left: 120px;
+      margin-top: 10px;
+      li{
+        margin-top: 13px;
+        font-size: 18px;
+        color: #E6EAEB;
+      }
+      li:hover{
+        cursor: pointer;
+        margin-top: 13px;
+        font-size: 18px;
+        color: #E6EAEB;
+      }
+    }
+    #Social{
+      margin-top: 18px;
+    }
+    .link{
+      display: flex;
+      padding-left: 200px;
+      i{
+        font-size: 25px;
+      }
+      #google{
+        color: 	#0F9D58;
+      }
+      #facebook{
+        color: #3b5998;
+      }
+      #whatsapp{
+        color: #25D366;
+      }
+      #twitter{
+        color: #00acee;
+      }
+      #location{
+        color: #FD1D1D;
+      }
+      #facebook,#whatsapp,#twitter,#location{
+        margin-left: 20px;
+      }
+    }
+  }
+  .feedback{
+    width: 100%;
+    height: 42vh;
+    // border: 2px double yellow;
+    padding-top: 30px;
+    h2{
+      margin-left: 35px;
+      color: aqua;
+    }
+    form{
+      margin-left: 90px;
+    }
+    mat-form-field{
+      border-radius: 12px;
+      width: 320px;
+      height: 8vh;
+      background-color: #fff;
+      input{
+        font-weight: bolder;
+          font-size: 22px;
+          color: black;
+      }
+
+    }
+    #comment{
+      margin-top: 20px;
+    }
+    #post-comment{
+      background-color: #A020F0;
+      color: bisque;
+      width: 105px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+    #post-comment:hover{
+      background-color: darkblue;
+      color: #fff;
+      width: 105px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    #copy{
+      margin-right: 19px;
+      font-size: 13px;
+      color: #fff;
+      float: right;
+    }
+
+  }
+}
