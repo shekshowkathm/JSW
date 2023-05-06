@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JswhomeRoutingModule } from './jswhome-routing.module';
+import { JswhomeComponent } from './jswhome/jswhome.component';
+import { FooterComponent } from "./footer/footer.component";
+import { AboutComponent } from "./about/about.component";
+import { BlogComponent } from "./blog/blog.component";
+import { ContactHeaderComponent } from "./contact-header/contact-header.component";
+import { HeaderComponent } from "./header/header.component";
+import { LoginComponent } from "./login/login.component";
+import { ServicesComponent } from "./services/services.component";
+import { SellerComponent } from "./seller/seller.component";
 
-//Angular Material Components
 
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -34,22 +41,20 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
-import { ChartModule } from "angular-highcharts";
-import * as highcharts from 'highcharts';
+import { ChartModule } from 'angular-highcharts';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
-    AppComponent
+    JswhomeComponent,SellerComponent,FooterComponent,AboutComponent,BlogComponent,ContactHeaderComponent,HeaderComponent,LoginComponent,ServicesComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,FormsModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    JswhomeRoutingModule,
+    ChartModule,
     MatInputModule,
-    MatAutocompleteModule,ChartModule,
+    MatAutocompleteModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatRadioModule,
@@ -75,9 +80,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule,HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatPaginatorModule,FormsModule,ReactiveFormsModule,MatNativeDateModule,HttpClientModule
+  ]
 })
-export class AppModule { }
+export class JswhomeModule { }

@@ -1,0 +1,38 @@
+<div class="containers">
+  <div class="map-area">
+    <h2>View on map</h2>
+    <img src="../../../../assets/tpet.jpeg" alt="map">
+  </div>
+  <div class="company">
+    <h2>Company :</h2>
+    <ul>
+      <li (click)="changeColor('purple')">Service</li>
+      <li (click)="changeColor('green')">About</li>
+      <li (click)="changeColor('orange')">Blog</li>
+    </ul>
+    <h2 id="Social">Social media links :</h2>
+    <div class="link">
+      <h4><i class="fa-brands fa-google-play" id="google"></i></h4>
+      <h4><i class="fa-brands fa-facebook-f" id="facebook"></i></h4>
+      <h4><i class="fa-brands fa-whatsapp" id="whatsapp"></i></h4>
+      <h4><i class="fa-brands fa-twitter" id="twitter"></i></h4>
+      <h4><i class="fa-brands fa-instagram" id="location"></i></h4>
+    </div>
+  </div>
+  <div class="feedback">
+    <h2>Post your comment here :</h2>
+    <form>
+      <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Please enter your mail id" required>
+      </mat-form-field><pre></pre>
+      <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="comment">
+        <mat-label>Comment</mat-label>
+        <input matInput placeholder="Please enter your comment " required>
+      </mat-form-field>
+      <pre></pre>
+      <button id="post-comment">Post</button>
+    </form>
+    <h5 id="copy">All rights are reserved &#169; copyrights 2023 </h5>
+  </div>
+</div>

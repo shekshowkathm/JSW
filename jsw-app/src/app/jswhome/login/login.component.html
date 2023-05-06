@@ -1,0 +1,185 @@
+<div class="containers">
+  <div class="form" [ngSwitch]="currentColor">
+    <div id="progress-bar" *ngIf="displayProgressBar">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+
+    <div class="login" *ngSwitchCase="'red'">
+      <button mat-stroked-button color="accent" id="signup" (click)="switchToReg()">New user? <b>Sign up</b></button>
+      <h2>Login</h2>
+      <!-- <button mat-stroked-button color="accent" id="signup">New user? <b>Sign up</b></button> -->
+      <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter your mail id" formControlName="email" required>
+        </mat-form-field>
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+        id="email-error">
+        <div *ngIf="loginForm.get('email')?.errors?.['required']">
+          <h6>Email is required</h6>
+        </div>
+        <div *ngIf="loginForm.get('email')?.errors?.['email']">
+          <h6>Invalid email format</h6>
+        </div>
+      </div>
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
+        </mat-form-field>
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+        id="password-error">
+        <div *ngIf="loginForm.get('password')?.errors?.['required']">
+          <h6>Password is required</h6>
+        </div>
+        <div *ngIf="loginForm.get('password')?.errors?.['minlength']">
+          <h6>Invalid Password format</h6>
+        </div>
+      </div>
+        <pre></pre>
+        <button mat-raised-button color="primary" type="submit" id="submit">Submit</button><button mat-raised-button color="warn" id="reset">Reset</button>
+      </form>
+    </div>
+    <div class="register" *ngSwitchCase="'blue'">
+      <button mat-stroked-button color="accent" id="signin" (click)="switchToLog()"> <b>Sign in</b></button>
+      <h2>Register</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="name-feild">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Enter your name" formControlName="name" required>
+
+        </mat-form-field>
+        <!-- <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)"
+           id="name-error">
+        <div *ngIf="registrationForm.get('name')?.errors?.['required']">
+          Name is required
+        </div>
+      </div> -->
+
+
+
+
+
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="dob-feild">
+          <mat-label>Date of birth</mat-label>
+          <input matInput [matDatepicker]="myDatePicker" formControlName="dob">
+          <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker></mat-datepicker>
+        </mat-form-field><pre></pre>
+        <div class="first-error-class">
+        <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)"
+           id="name-error">
+        <div *ngIf="registrationForm.get('name')?.errors?.['required']">
+          <h6>Name is required</h6>
+        </div>
+        </div>
+        <div *ngIf="registrationForm.get('dob')?.invalid && (registrationForm.get('dob')?.dirty || registrationForm.get('dob')?.touched)"
+           id="dob-error">
+        <div *ngIf="registrationForm.get('dob')?.errors?.['required']">
+          <h6>DOB is required</h6>
+        </div>
+      </div>
+    </div>
+
+
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="gender-feild">
+          <mat-label>Gender</mat-label>
+          <input matInput type="text" placeholder="Enter your gender" required>
+          <mat-select formControlName="gender">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <div *ngIf="registrationForm.get('gender')?.invalid && (registrationForm.get('gender')?.dirty || registrationForm.get('gender')?.touched)"
+          class="alert alert-danger">
+        <div *ngIf="registrationForm.get('gender')?.errors?.['required']">
+          Gender is required
+        </div>
+      </div> -->
+
+
+
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="email-feild">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" placeholder="Enter your email" formControlName="email" required>
+        </mat-form-field><pre></pre>
+        <div class="first-error-class">
+        <div *ngIf="registrationForm.get('gender')?.invalid && (registrationForm.get('gender')?.dirty || registrationForm.get('gender')?.touched)"
+        id="gender-error">
+        <div *ngIf="registrationForm.get('gender')?.errors?.['required']">
+          <h6>Gender is required</h6>
+        </div>
+      </div>
+        <div *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)"
+        id="email-error">
+        <div *ngIf="registrationForm.get('email')?.errors?.['required']">
+          <h6>Email is required</h6>
+        </div>
+        <div *ngIf="registrationForm.get('email')?.errors?.['email']">
+          <h6>Invalid email format</h6>
+        </div>
+      </div>
+    </div>
+
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="password-feild">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Enter your password" formControlName="password" required>
+        </mat-form-field>
+        <!-- <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)"
+          class="alert alert-danger">
+        <div *ngIf="registrationForm.get('password')?.errors?.['required']">
+          Password is required
+        </div>
+        <div *ngIf="registrationForm.get('password')?.errors?.['password']">
+          Invalid email format
+        </div>
+      </div> -->
+
+
+
+
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="number-feild">
+          <mat-label>Number</mat-label>
+          <input matInput type="number" placeholder="Enter your number" formControlName="number" required>
+        </mat-form-field>
+        <div class="first-error-class">
+        <div *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)"
+        id="password-error">
+        <div *ngIf="registrationForm.get('password')?.errors?.['required']">
+          <h6>Password is required</h6>
+        </div>
+        <div *ngIf="registrationForm.get('password')?.errors?.['minlength']">
+          <h6>Invalid Password format</h6>jsjd
+        </div>
+      </div>
+        <div *ngIf="registrationForm.get('number')?.invalid && (registrationForm.get('number')?.dirty || registrationForm.get('number')?.touched)"
+        id="number-error">
+        <div *ngIf="registrationForm.get('number')?.errors?.['required']">
+          <h6>Number is required</h6>
+        </div>
+      </div>
+      </div>
+
+
+
+        <!-- <pre></pre> -->
+        <button mat-raised-button color="primary" id="submit" [disabled]="!registrationForm.valid" >Submit</button><button mat-raised-button color="warn" id="reset" (click)="onSubmit()">Reset</button>
+        </form>
+
+
+    </div>
+    <div class="about" *ngSwitchCase="'green'">
+      <app-about></app-about>
+    </div>
+    <div class="about" *ngSwitchCase="'orange'">
+      <app-blog></app-blog>
+    </div>
+    <div class="about" *ngSwitchCase="'cyan'">
+      <app-seller></app-seller>
+    </div>
+    <div class="about" *ngSwitchCase="'purple'">
+      <app-services></app-services>
+    </div>
+  </div>
+</div>

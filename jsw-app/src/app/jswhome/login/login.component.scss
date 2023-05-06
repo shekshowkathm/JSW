@@ -1,0 +1,212 @@
+.containers{
+  width: 100%;
+  height: 93vh;
+  // background-image: url(../../../../assets/bgg.jpg);
+  background-image: url('../../../assets/bgc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 13px;
+
+  .form:hover{
+    // background-color: rgba(245, 222, 179, 0.507);
+    background-color: rgba(245, 222, 179, 0.959);
+    #submit{
+      background-color: #A020F0;
+      color: pink;
+    }
+    #submit:hover{
+      background-color: darkblue;
+      color: #fff;
+    }
+    #reset{
+      background-color: orangered;
+      color: pink;
+    }
+    #reset:hover{
+      background-color: red;
+      color: #fff;
+    }
+    #signup:hover{
+      background-color: #9e0451 !important;
+      color: #fff;
+    }
+    #signin:hover{
+      background-color: #660435 !important;
+      color: #fff;
+    }
+
+  }
+  .form{
+    width: 65%;
+    margin-left: 260px;
+    border-radius: 10px;
+    height: 90vh;
+    background-color: rgba(224, 255, 255, 0.164);
+
+    .login{
+      height: 70vh;
+      padding-top: 55px;
+      // border: 2px solid yellow;
+      #email-error,#password-error{
+        width: 18%;
+        height: 35px;
+        border: 2px dotted black;
+        margin-left: 249px;
+        h6{
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+      h2{
+        margin-top: 30px;
+        color: darkblue;
+        font-size: 50px;
+        font-weight: lighter;
+        text-align: center;
+        margin-left: 150px;
+      }
+      form{
+        margin-top: 20px;
+      }
+      .mat-form-field{
+        margin-top: 20px;
+        margin-left: 245px;
+        width: 50%;
+
+        mat-label{
+          font-weight: bolder;
+          font-size: 20px;
+        }
+        #progress-bar{
+          border: 2px double yellow;
+          width: 75%;
+          height: 1vh;
+          z-index: 99;
+        }
+
+        input{
+          font-weight: bolder;
+          font-size: 25px;
+          color: black;
+
+          // padding: 05px;
+        }
+      }
+      #submit{
+        margin-left: 245px;
+        width: 125px;
+        height: 50px;
+        margin-top: 23px;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 10px;
+      }
+      #reset{
+        margin-left: 235px;
+        width: 125px;
+        height: 50px;
+        margin-top: 23px;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 10px;
+      }
+      #signup{
+        margin-right: 30px;
+        float: right;
+        width: 155px;
+        height: 50px;
+        font-weight: bold;
+        font-size: 12px;
+        border-radius: 10px;
+        background-color: #ff008048;
+        color: bisque;
+      }
+    }
+    .register{
+      height: 70vh;
+      padding-top: 35px;
+      .first-error-class{
+        h6{
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+      #name-error,#gender-error,#password-error{
+        width: 12%;
+        border: 2px dotted black;
+        height: 30px;
+        margin-left: 129px;
+      }
+      #dob-error,#email-error,#number-error{
+
+        width: 14%;
+        border: 2px dotted black;
+        height: 30px;
+        margin-left: 409px;
+      }
+      .first-error-class{
+        display: flex;
+      }
+      #signin{
+        margin-right: 30px;
+        float: right;
+        width: 125px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 19px;
+        border-radius: 10px;
+        background-color: #ff008048;
+        color: bisque;
+      }
+      h2{
+        margin-top: 05px;
+        color: purple;
+        font-size: 50px;
+        font-weight: lighter;
+        text-align: center;
+        margin-left: 150px;
+      }
+      form{
+        width: 100%;
+        margin-top: 30px;
+        mat-form-field{
+          width: 35%;
+        }
+        #submit{
+          margin-left: 130px;
+          width: 125px;
+          height: 50px;
+          margin-top: 23px;
+          font-weight: bold;
+          font-size: 18px;
+          border-radius: 10px;
+        }
+        #reset{
+          width: 125px;
+        height: 50px;
+        margin-top: 23px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 465px;
+        border-radius: 10px;
+        }
+      }
+      input{
+        font-weight: bolder;
+        font-size: 21px;
+        color: black;
+        // padding: 10px;
+      }
+
+      #name-feild,#gender-feild,#password-feild{
+        margin-left: 130px;
+      }
+      #dob-feild,#email-feild,#number-feild{
+        margin-left: 34px;
+      }
+      #gender-feild,#password-feild,#email-feild,#number-feild{
+        margin-top: 20px;
+      }
+    }
+  }
+}
