@@ -1,0 +1,115 @@
+.card-flex {
+  display: flex;
+  justify-content: center;
+}
+.example-card {
+  width: 500px;
+  p {
+    text-align: center;
+  }
+  margin: 30px;
+}
+.table-mointer-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  .tables {
+    width: 40%;
+    table {
+      width: 100%;
+      th{
+        background-color: blue;
+        color: #fff;
+        font-size: large;
+        text-align: center;
+      }
+      td {
+        text-align: center;
+      }
+      tr:nth-child(even){
+        background-color: #d3e8f2;
+      }
+      tr:nth-child(odd){
+        background-color: #b6daeb;
+      }
+      tr:hover {
+        background-color: #e9f1f5;
+      }
+    }
+  }
+  .mitigation-alert {
+    width: 50%;
+    h3 {
+      text-align: center;
+      span {
+        border: 1px solid red;
+        color: red;
+        padding: 6px 12px;
+        font-weight: 900;
+      }
+    }
+    .mitigation-alert-wrap {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px;
+      gap:20px;
+        .card-alert {
+          text-align: center;
+          width: 30%;
+          padding: 4px;
+          border: 1px solid red;
+          border-radius: 10px;
+          mat-card-header {
+            padding: 0 !important;
+            color: red;
+          }
+          mat-card-content {
+            padding: 0 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p{
+              color: red;
+            }
+            span {
+              margin-bottom: 6px;
+            }
+          }
+        }
+    }
+  }
+}
+
+.table-value-card-flex {
+  width: 100px;
+}
+.flex-card {
+  display: flex;
+}
+.four-cards {
+  display: flex;
+}
+.five-card-flex {
+  display: flex;
+}
+mat-toolbar{
+  border: 2px solid transparent;
+  h2{
+    background-color: rgb(242, 209, 22);
+    border: 2px solid green;
+    color: black;
+    width: 100%;
+    text-align: center;
+    // border-radius: 30px;
+    margin-top: 10px;
+    padding: 10px;
+
+  }
+
+}
+.custom-tab-class {
+  background-color: #f2f2f2;
+}

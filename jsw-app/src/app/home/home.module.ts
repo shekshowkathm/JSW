@@ -41,6 +41,8 @@ import { RateofeffusionComponent } from './rateofeffusion/rateofeffusion.compone
 import { RateofdiffusionComponent } from './rateofdiffusion/rateofdiffusion.component';
 import { MonitorComponent } from './monitor/monitor.component';
 import { MonitersheaderComponent } from './monitersheader/monitersheader.component';
+import { MatTab } from '@angular/material/tabs';
+
 
 
 @NgModule({
@@ -85,7 +87,7 @@ import { MonitersheaderComponent } from './monitersheader/monitersheader.compone
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+
 
   ]
 })

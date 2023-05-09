@@ -6,6 +6,7 @@ import { AuthGuard } from '../jswhome/shared/auth.guard';
 
 const routes: Routes = [
   {path:'dashboard',component:HomeComponent},
+  {path:'monitor',component:MonitorComponent}
 
 ];
 
