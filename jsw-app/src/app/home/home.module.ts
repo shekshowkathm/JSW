@@ -39,6 +39,11 @@ import { RateofemissionsComponent } from './rateofemissions/rateofemissions.comp
 import { LossofconsumptionComponent } from './lossofconsumption/lossofconsumption.component';
 import { RateofeffusionComponent } from './rateofeffusion/rateofeffusion.component';
 import { RateofdiffusionComponent } from './rateofdiffusion/rateofdiffusion.component';
+import { MonitorComponent } from './monitor/monitor.component';
+import { MonitersheaderComponent } from './monitersheader/monitersheader.component';
+import { MatTab } from '@angular/material/tabs';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { RateofdiffusionComponent } from './rateofdiffusion/rateofdiffusion.comp
     RateofemissionsComponent,
     LossofconsumptionComponent,
     RateofeffusionComponent,
-    RateofdiffusionComponent
+    RateofdiffusionComponent,
+    MonitorComponent,
+    MonitersheaderComponent
   ],
   imports: [
     CommonModule,
@@ -80,7 +87,7 @@ import { RateofdiffusionComponent } from './rateofdiffusion/rateofdiffusion.comp
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+
 
   ]
 })
