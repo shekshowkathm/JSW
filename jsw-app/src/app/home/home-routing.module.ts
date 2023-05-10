@@ -5,8 +5,8 @@ import { MonitorComponent } from './monitor/monitor.component';
 import { AuthGuard } from '../jswhome/shared/auth.guard';
 
 const routes: Routes = [
-  {path:'dashboard',component:HomeComponent},
-  {path:'monitor',component:MonitorComponent}
+  {path:'dashboard',component:HomeComponent,canActivate: [AuthGuard]},
+  {path:'monitor',component:MonitorComponent,canActivate: [AuthGuard]}
 
 ];
 
