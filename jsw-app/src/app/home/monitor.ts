@@ -3,3 +3,5 @@ export class Monitor {
   location!:string
   ppm!:string
 }
+
+
