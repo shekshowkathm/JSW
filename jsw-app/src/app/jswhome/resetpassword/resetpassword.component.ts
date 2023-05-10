@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { RegisterService } from '../service/register.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from '../model/custom-validators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
@@ -14,6 +14,7 @@ import { Register } from '../model/register';
 })
 export class ResetpasswordComponent implements OnInit {
   register:any;
+
 email!:String
 hide=true;
 disabled = true;
@@ -34,7 +35,7 @@ color = true;
 
  public  formGroup: FormGroup;
 
-  constructor(private registerService :RegisterService , private activeRouter:ActivatedRoute) {
+  constructor(private registerService :RegisterService , private activeRouter:ActivatedRoute, private router:Router) {
     this.formGroup=new FormGroup({
     password:new FormControl("",[Validators.required]),
     confirmPassword:new FormControl("",[Validators.required])
@@ -56,8 +57,11 @@ color = true;
     this.register.email = this.email;
     console.log( this.register.email,"3");
 
-    // this.registerService.Update(this.register).subscribe((doc:any)=>{})
-    // console.log(this.register,123456789);
+    this.registerService.Update(this.register).subscribe((doc:any)=>{
+      this.sweetalert();
+      this.router.navigateByUrl('/');
+    })
+    console.log(this.register,123456789);
 
   }
   get passwordMatchError() {
