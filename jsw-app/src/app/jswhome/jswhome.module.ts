@@ -45,9 +45,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ChartModule } from 'angular-highcharts';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 @NgModule({
   declarations: [
-    JswhomeComponent,SellerComponent,FooterComponent,AboutComponent,BlogComponent,ContactHeaderComponent,HeaderComponent,LoginComponent,ServicesComponent
+    JswhomeComponent,SellerComponent,FooterComponent,AboutComponent,BlogComponent,ContactHeaderComponent,HeaderComponent,LoginComponent,ServicesComponent, ForgetpasswordComponent, ResetpasswordComponent
   ],
   imports: [
     CommonModule,

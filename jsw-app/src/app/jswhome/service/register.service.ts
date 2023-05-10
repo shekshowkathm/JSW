@@ -12,6 +12,7 @@ export class RegisterService {
   private colorSource = new BehaviorSubject<string>('red');
   currentColor = this.colorSource.asObservable();
 
+
   private apiUrl = 'http://localhost:8080/register/save';
   private loginapiUrl = 'http://localhost:8080/authenticate/login';
   private TOKEN_KEY = '';
@@ -51,4 +52,15 @@ export class RegisterService {
   isLoggedIn(){
     return localStorage.getItem('token')!=null;
   }
+  Update = (change: any) => {
+    const body = JSON.stringify(change);
+    console.log('ejfenjfejn', change.email, change);
+    // return this.http.put(baseurlupdatepassword + `/${change.email}`, body, {
+    //   headers: this.requestHeaders,
+    // });
+  };
+  // getEmail(item): Observable<Register[]> {
+  //   // console.log(item, 'ddffggSERVICE');
+  //   return this.http.get<Register[]>(baseurlgetforgotpassword + `/${item}`);
+  // }
 }
