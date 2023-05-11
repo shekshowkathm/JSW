@@ -40,6 +40,7 @@ import { ChartModule } from "angular-highcharts";
 import * as highcharts from 'highcharts';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -75,7 +76,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule,HttpClientModule
+    MatPaginatorModule,HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

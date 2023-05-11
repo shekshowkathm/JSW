@@ -17,6 +17,7 @@ export class RegisterService {
     'http://localhost:8080/register/retrieveregisterbyemailforpassword';
   private baseurlupdatepassword = 'http://localhost:8080/register/updatepasswordbyemail';
   private TOKEN_KEY = '';
+  private alert ='http://localhost:8080/register/alert';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -72,5 +73,13 @@ export class RegisterService {
     return this.http.get<Register[]>(
       this.baseurlgetforgotpassword + `/${item}`
     );
+  }
+  showAlert(items:any){
+    console.log(items);
+
+
+      return this.http.post<any>(this.alert,items,{responseType: 'text' as 'json',});
+
+
   }
 }
