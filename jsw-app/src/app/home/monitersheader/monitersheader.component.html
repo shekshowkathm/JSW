@@ -1,9 +1,9 @@
 <mat-toolbar>
-  <img src="../../../assets/JSW_Sword.jpg ">
+  <img src="../../../assets/JSW_Sword.jpg " />
   <h2>ONE VIEW Monitoring of Gas DETECTORS</h2>
-  <img src="../../../assets/jsw.png ">
+  <img src="../../../assets/jsw.png " />
 </mat-toolbar>
-<mat-tab-group >
+<mat-tab-group>
   <mat-tab label="STATUS" [ngClass]="'custom-tab-class'" id="status">
     <div class="card-flex">
       <mat-card class="example-card">
@@ -44,64 +44,57 @@
 
     <!-- moniter table -->
     <div class="table-mointer-flex">
+
       <div class="tables">
-        <table mat-table [dataSource]="mydata" class="mat-elevation-z8">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
           <ng-container matColumnDef="slno">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.slno}} </td>
+            <th mat-header-cell *matHeaderCellDef>SlNo.</th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              {{ i + 1 }}
+            </td>
           </ng-container>
           <ng-container matColumnDef="location">
-            <th mat-header-cell *matHeaderCellDef> Location </th>
-            <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+            <th mat-header-cell *matHeaderCellDef>Location</th>
+            <td mat-cell *matCellDef="let element">{{ element.location }}</td>
           </ng-container>
           <ng-container matColumnDef="ppm">
-            <th mat-header-cell *matHeaderCellDef> PPM </th>
-            <td mat-cell *matCellDef="let element"> {{element.ppm}} </td>
+            <th mat-header-cell *matHeaderCellDef>PPM</th>
+            <td mat-cell *matCellDef="let element">{{ element.ppm }}</td>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>DATE</th>
+            <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef>TIME</th>
+            <td mat-cell *matCellDef="let element">{{ element.time }}</td>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
       </div>
 
       <div class="mitigation-alert">
         <h3><span>NEED ATTENTION FOR MITIGATION</span></h3>
         <!-- card values from table -->
         <div class="mitigation-alert-wrap">
-          <ng-container *ngFor="let item of mydata">
-              <mat-card class="card-alert">
-                <mat-card-header>
-                  <mat-card-title>ALERT:</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                  <p>{{item.ppm}}</p>
-                  <span>{{item.location}}</span>
-                </mat-card-content>
-              </mat-card>
+          <ng-container *ngFor="let item of alertData">
+            <mat-card *ngIf="+item.ppm >= +'-30'" class="card-alert">
+              <mat-card-header>
+                <mat-card-title>ALERT:</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ item.ppm }}</p>
+                <span>{{ item.location }}</span>
+              </mat-card-content>
+            </mat-card>
           </ng-container>
-          <!-- <mat-card class="card-alert">
-              <mat-card-content style="padding: 30px">
-                <p>100</p>
-              </mat-card-content>
-            </mat-card> -->
-          <!-- <div class="cards">
-            <mat-card class="card-alert">
-              <mat-card-content style="padding: 30px">
-                <p>115</p>
-              </mat-card-content>
-            </mat-card> -->
-            <!-- <mat-card class="card-alert">
-              <mat-card-content style="padding: 30px">
-                <p>15</p>
-              </mat-card-content>
-            </mat-card>
-          </div> -->
-          <!-- <div class="cards">
-            <mat-card class="card-alert">
-              <mat-card-content style="padding: 30px">
-                <p>15</p>
-              </mat-card-content>
-            </mat-card>
-          </div> -->
         </div>
       </div>
     </div>

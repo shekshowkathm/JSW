@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Register } from '../model/register';
 import { Login } from '../model/login';
+import { Monitor } from 'src/app/home/monitor';
 @Injectable({
   providedIn: 'root',
 })
@@ -15,9 +16,11 @@ export class RegisterService {
   private loginapiUrl = 'http://localhost:8080/authenticate/login';
   private baseurlgetforgotpassword =
     'http://localhost:8080/register/retrieveregisterbyemailforpassword';
-  private baseurlupdatepassword = 'http://localhost:8080/register/updatepasswordbyemail';
+  private baseurlupdatepassword =
+    'http://localhost:8080/register/updatepasswordbyemail';
   private TOKEN_KEY = '';
-  private alert ='http://localhost:8080/register/alert';
+  private alertAPI = 'http://localhost:8080/register/alert';
+  private getgaswarn = 'http://localhost:8080/gaswarn/showAll';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -55,7 +58,7 @@ export class RegisterService {
   isLoggedIn() {
     return localStorage.getItem('token') != null;
   }
-  Update(change:any) {
+  Update(change: any) {
     const body = JSON.stringify(change);
     console.log('ejfenjfejn', change.email, change);
     return this.http.put(
@@ -74,12 +77,14 @@ export class RegisterService {
       this.baseurlgetforgotpassword + `/${item}`
     );
   }
-  showAlert(items:any){
-    console.log(items);
 
 
-      return this.http.post<any>(this.alert,items,{responseType: 'text' as 'json',});
-
-
+  showAlert(items:any) {
+    return this.http.post<any>(this.alertAPI, items, {
+      responseType: 'text' as 'json',
+    });
+  }
+  getAll():Observable<Monitor[]> {
+    return this.http.get<Monitor[]>(this.getgaswarn);
   }
 }

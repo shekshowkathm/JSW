@@ -39,6 +39,7 @@ import { FormsModule } from '@angular/forms';
 import { ChartModule } from "angular-highcharts";
 import * as highcharts from 'highcharts';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/material.module';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,HttpClientModule,
+    MaterialModule
 
   ],
   providers: [],
