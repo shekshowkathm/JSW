@@ -41,7 +41,7 @@ export class MonitersheaderComponent implements OnInit {
 
 
 
-  constructor(private registerService: RegisterService) {
+  constructor(private registerService: RegisterService,private graphService:GraphService) {
     this.token = localStorage.getItem('token');
     this.payloadSub = jwt_decode(this.token);
     this.gassu.email = this.payloadSub.sub;
@@ -97,8 +97,6 @@ export class MonitersheaderComponent implements OnInit {
       }
     });
 
-
-  constructor(private graphService:GraphService){}
 
 
   }
