@@ -39,6 +39,8 @@ import { FormsModule } from '@angular/forms';
 import { ChartModule } from "angular-highcharts";
 import * as highcharts from 'highcharts';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/material.module';
+
 import { BnNgIdleService } from 'bn-ng-idle';
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { BnNgIdleService } from 'bn-ng-idle';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule,HttpClientModule
+    MatPaginatorModule,HttpClientModule,
+    MaterialModule
+
   ],
   providers: [BnNgIdleService],
   bootstrap: [AppComponent]
