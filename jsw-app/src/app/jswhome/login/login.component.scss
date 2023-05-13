@@ -47,6 +47,14 @@
       height: 70vh;
       padding-top: 55px;
       // border: 2px solid yellow;
+      #forgot{
+        background-color: rgb(4, 185, 245);
+        color: #000;
+        margin-top: 2px;
+        margin-left: 245px;
+        width: 12%;
+        padding: 5px;
+      }
       #email-error,#password-error{
         width: 18%;
         height: 35px;

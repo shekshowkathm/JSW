@@ -79,7 +79,7 @@ export class LoginComponent {
     if (this.registrationForm.invalid) {
       alert("invalid form")
     }else{
-      alert("Success")
+      // alert("Success")
     console.log(this.registrationForm.value);
 
       this.registerService.submitForm(this.registrationForm.value).subscribe((data:any)=>{
@@ -122,7 +122,7 @@ export class LoginComponent {
         'success'
       )
 
-      this.router.navigate(['/home/dashboard']);
+      this.router.navigate(['/home/monitor']);
     },error => console.log('Error', error))
 
   }

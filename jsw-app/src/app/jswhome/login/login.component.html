@@ -35,11 +35,12 @@
         <div *ngIf="loginForm.get('password')?.errors?.['minlength']">
           <h6>Invalid Password format</h6>
         </div>
-      </div>
+      </div><br>
+      <button routerLink="/forgetpassword" id="forgot" >Forgot password</button>
         <pre></pre>
         <button mat-raised-button color="primary" type="submit" id="submit">Submit</button><button mat-raised-button color="warn" id="reset">Reset</button>
       </form>
-      <button routerLink="/forgetpassword">Forgot password</button>
+
     </div>
     <div class="register" *ngSwitchCase="'blue'">
       <button mat-stroked-button color="accent" id="signin" (click)="switchToLog()"> <b>Sign in</b></button>

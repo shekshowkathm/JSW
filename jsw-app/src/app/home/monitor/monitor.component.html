@@ -1,1 +1,11 @@
 <app-monitersheader></app-monitersheader>
+<div class="chart-container" [ngSwitch]="currentGrah">
+  <!-- <ng-container *ngSwitchCase="'red'">
+    <div class="chart-container">
+      <p>Total graph</p>
+      <canvas id="MyChart">{{ chart }}</canvas>
+    </div>
+  </ng-container> -->
+
+  <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>

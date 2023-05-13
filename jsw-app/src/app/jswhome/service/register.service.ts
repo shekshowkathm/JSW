@@ -11,6 +11,8 @@ export class RegisterService {
   private colorSource = new BehaviorSubject<string>('red');
   currentColor = this.colorSource.asObservable();
 
+  
+
   private apiUrl = 'http://localhost:8080/register/save';
   private loginapiUrl = 'http://localhost:8080/authenticate/login';
   private baseurlgetforgotpassword =
