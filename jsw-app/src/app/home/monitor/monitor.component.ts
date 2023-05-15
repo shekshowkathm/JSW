@@ -15,6 +15,10 @@ export class MonitorComponent {
 
   public chart: any;
   currentGrah:string='total';
+   myXaxixArray: string[] = ['BF-1 GCP', 'BF-1 CONTROL ROOM', 'BF-1 FURNACE', 'BF-1 HUSK STORAGE'];
+   myYaxisArray: string[] = ['112','189','210','297'];
+
+
   constructor(private bnIdle: BnNgIdleService,private router:Router,private graphService:GraphService){}
 
   ngOnInit(): void {
@@ -44,13 +48,11 @@ export class MonitorComponent {
       type: 'bar', //this denotes tha type of chart
 
       data: {// values on X-Axis
-        labels: ['BF-1 GCP', 'BF-1 CONTROL ROOM', 'BF-1 FURNACE	','BF-1 HUSK STORAGE',
-								  ],
+        labels: this.myXaxixArray,
 	       datasets: [
           {
             label: "Sales",
-            data: [ '92',
-								 '574', '573', '576'],
+            data: this.myYaxisArray,
             backgroundColor: 'blue'
           },
 

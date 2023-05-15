@@ -47,8 +47,8 @@
       <h2>Register</h2>
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
         <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="name-feild">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Enter your name" formControlName="name" required>
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Enter your first name" formControlName="name" required>
 
         </mat-form-field>
         <!-- <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)"
@@ -62,12 +62,17 @@
 
 
 
-        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="dob-feild">
+        <!-- <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="dob-feild">
           <mat-label>Date of birth</mat-label>
           <input matInput [matDatepicker]="myDatePicker" formControlName="dob">
           <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
           <mat-datepicker #myDatePicker></mat-datepicker>
-        </mat-form-field><pre></pre>
+        </mat-form-field><pre></pre> -->
+        <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="dob-feild">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter your last name" formControlName="lastname" required>
+
+        </mat-form-field>
         <div class="first-error-class">
         <div *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)"
            id="name-error">
@@ -75,18 +80,24 @@
           <h6>Name is required</h6>
         </div>
         </div>
-        <div *ngIf="registrationForm.get('dob')?.invalid && (registrationForm.get('dob')?.dirty || registrationForm.get('dob')?.touched)"
+        <div *ngIf="registrationForm.get('lastname')?.invalid && (registrationForm.get('lastname')?.dirty || registrationForm.get('lastname')?.touched)"
+           id="name-error">
+        <div *ngIf="registrationForm.get('lastname')?.errors?.['required']">
+          <h6>Last Name is required</h6>
+        </div>
+        </div>
+        <!-- <div *ngIf="registrationForm.get('dob')?.invalid && (registrationForm.get('dob')?.dirty || registrationForm.get('dob')?.touched)"
            id="dob-error">
         <div *ngIf="registrationForm.get('dob')?.errors?.['required']">
           <h6>DOB is required</h6>
         </div>
-      </div>
+      </div> -->
     </div>
 
 
         <mat-form-field  hideRequiredMarker appearance="outline" color="warn" class="mat-form-field" id="gender-feild">
           <mat-label>Gender</mat-label>
-          <input matInput type="text" placeholder="Enter your gender" required>
+          <!-- <input matInput type="text" placeholder="Enter your gender" required> -->
           <mat-select formControlName="gender">
             <mat-option *ngFor="let food of foods" [value]="food.value">
               {{food.viewValue}}

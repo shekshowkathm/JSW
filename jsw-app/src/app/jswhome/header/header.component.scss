@@ -22,7 +22,10 @@
       display: flex;
       list-style-type: none;
       margin-top: 40px;
-      padding-left: 390px;
+      padding-left: 330px;
+      #nav{
+        visibility: hidden;
+      }
       li{
         // border: 4px double blue;
         font-size: 19px;

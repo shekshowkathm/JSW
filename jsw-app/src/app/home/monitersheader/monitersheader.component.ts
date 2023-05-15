@@ -91,7 +91,7 @@ export class MonitersheaderComponent implements OnInit {
           this.gassu.location=this.relevantLocation
           this.gassu.ppm=item.ppm
 
-          this.triggerAlert();
+          // this.triggerAlert();
           // break;
         }
       }
@@ -104,11 +104,11 @@ export class MonitersheaderComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  triggerAlert() {
-    this.registerService.showAlert(this.gassu).subscribe((data: any) => {
-      console.log(data);
-    });
-  }
+  // triggerAlert() {
+  //   this.registerService.showAlert(this.gassu).subscribe((data: any) => {
+  //     console.log(data);
+  //   });
+  // }
   getGasWarnData(){
     this.registerService.getAll().subscribe((doc:any)=>{
       this.alertData=doc

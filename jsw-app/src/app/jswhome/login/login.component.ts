@@ -39,7 +39,7 @@ export class LoginComponent {
     })
     this.registrationForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      dob: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       number: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
